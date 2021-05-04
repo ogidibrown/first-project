@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+flex-direction: column;
+    height: 100vh;
+    /* background-image: url('./images/NmQ4.png'); */
+
+    
+}
+
+.downlp{
+    /* background-color: yellow; */
+    flex: 0.87;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+}
+
+.topdownlp{
+    /* background-color: orange;  */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    flex:0.6px;
+    z-index: 1;
+}
+
+.middledownlp{
+    /* background-color: brown; */
+    align-items: center;
+    justify-content: center;
+    flex:0.05px;
+    display: flex;
+    /* padding-top: 200px; */
+    /* width: 700px;
+    height: 5px; */
+    z-index: 1;
+}
+
+.downdownlp{
+    /* background-color: chocolate; */
+    align-items: center; 
+    flex:0.3px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+
+
+.textone{
+    color:#fff;
+    font-size: 4em;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.texttwo{
+    color: white;
+    font-size: 1.5em;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: 900; */
+}
+
+
+
+    
+
+
+
+
+.select{
+    height: 30px;
+    width: 300px;
+    z-index: 1;
+    margin-right: 15px;
+    z-index: 1;
+}
+.visit{
+    color: white;
+    z-index: 1;
+}
+
+.searchbtn{
+    height: 50px;
+    width: 80px;
+    margin-left: 48px;
+    border-radius:35px;
+    outline:none;
+    border:none;
+    opacity:5px;
+    z-index: 1;
+    margin-left: 100px;
+}
+
+.ddd{
+background-color: none;
+}
+
+.dd{
+    background-color: white;
+}
