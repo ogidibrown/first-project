@@ -3,25 +3,56 @@ import { useHistory } from 'react-router-dom';
 import {LoginButton2, SignupButton2} from './Button.style';
 import {useAppContext} from './store/context';
 import './login.css';
-import Images from '../src/images/log1.jpg';
+import Images from '../src/images/bra2.png';
+
 
 
 const Login = () => {
 
-    const {updateValues} = useAppContext({})
-    const History = useHistory();
 
-    const gotoDashboard= (e) =>{
-        History.push('/dashboard')
+
+
+    const {updateValues, values} = useAppContext({})
+    let history = useHistory();
+
+
+    const submit = (e) =>{
         e.preventDefault();
+        let json_object = JSON.stringify(values)
+
+        fetch('http://localhost:5000/api/v1/login', {
+            method: 'POST',
+            body: json_object,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            if (response.success){
+                history.push('./dashboard')
+            }else if(response.failure){
+                alert("Wrong User or Password");
+            } else if (response.goaway){
+                alert("User doesn't exist... Please Signup!!!");
+            }
+            },
+            (err)=> console.log(err)
+        );
     }
     const gotoSignup= (e) =>{
-        History.push('/signup')
+        history.push('/signup')
         e.preventDefault();
     }
+
+    console.log(values);
 
     return(
         <div className="logindiv">
+            {/* <div>
+                <h1>{message}</h1>
+            </div> */}
            
             {/* <div className="picdiv">
                 </div> */}
@@ -41,12 +72,12 @@ const Login = () => {
                
                 
                 <div className="inputdiv">
-                 <Inputfield className="input1" type="text" name="Username" onChange={updateValues} placeholder="USERNAME" />
-                 <Inputfield className="input2" type="password" password="password" onChange={updateValues} placeholder="PASSWORD"/>
+                 <Inputfield className="input1" type="text" name="email" onChange={updateValues} placeholder="USERNAME" />
+                 <Inputfield className="input2" type="password" name="password" onChange={updateValues} placeholder="PASSWORD"/>
             </div>
 
            <div className="btndiv">
-                 <LoginButton2 onClick={gotoDashboard}>Login</LoginButton2>
+                 <LoginButton2 onClick={submit} onChange={onchange}>Login</LoginButton2>
                  <SignupButton2 onClick={gotoSignup}>Signup</SignupButton2>
 
            </div>

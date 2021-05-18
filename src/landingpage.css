@@ -17,37 +17,6 @@
 
 }
 
-.toplp{
-/* background-color: red; */
-flex: 0.13;
-display: flex;
-z-index: 1;
-
-
-}
-
-
-.lefttoplp{
-    /* background-color: green; */
-    flex:0.2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: 10px;
-    z-index: 1;
-}
-
-.righttoplp{
-    /* background-color: blue; */
-    flex:0.8;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 1;
-}
-
-
-
 .brand{
     font-style:inherit;
     color:#fff;
@@ -63,38 +32,94 @@ z-index: 1;
     z-index: 1;
 }
 
+.toplp{
+    /* background-color: red; */
+    flex: 0.13;
+    display: flex;
+    z-index: 1;
+    
+    
+    }
+
+    .righttoplp{
+        /* background-color: blue; */
+        flex:0.8;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 1;
+    }
+    .downlp{
+        /* background-color: yellow; */
+        flex: 0.87;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+    
+    }
+    
+    .topdownlp{
+        /* background-color: orange;  */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        flex:0.6px;
+        z-index: 1;
+    }
+
+    
+    
+    .lefttoplp{
+        /* background-color: green; */
+        flex:0.2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 10px;
+        z-index: 1;
+    }
+
+    .middledownlp{
+        /* background-color: brown; */
+        align-items: center;
+        justify-content: center;
+        flex:0.05px;
+        display: flex;
+        /* padding-top: 200px; */
+        /* width: 700px;
+        height: 5px; */
+        z-index: 1;
+    }
+    
+    .downdownlp{
+        /* background-color: chocolate; */
+        align-items: center; 
+        flex:0.3px;
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .select{
+        margin-right: 35px;
+        z-index: 1;
+        width: 150px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .log{
+     font-family: 'Montserrat', sans-serif;
+
+    }
 
 
-.select{
-    height: 30px;
-    width: 300px;
-    z-index: 1;
-    margin-right: 15px;
-    z-index: 1;
-}
-.visit{
-    color: white;
-    z-index: 1;
-}
-.select{
-    margin-right: 15px;
-    z-index: 1;
-}
-.searchbtn{
-    height: 50px;
-    width: 80px;
-    margin-left: 48px;
-    border-radius:35px;
-    outline:none;
-    border:none;
-    opacity:5px;
-    z-index: 1;
-}
-
-.ddd{
-background-color: none;
-}
-
-.dd{
-    background-color: white;
-}

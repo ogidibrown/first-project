@@ -1,23 +1,19 @@
 
-
-import {useAppContext}from './store/context';
+import './dashboard.css'
+// import {useAppContext}from './store/context';
 
 
 const Dashboard = () =>{
 
-    const {Brandname} = useAppContext()
+    // const {} = useAppContext()
 
     return(
-        <div>
-            <h1>{Brandname}</h1>
+        <div className="maindash">
+            <div>
+            <h1>hi there i'm dasboard</h1>
+            </div>
 
-            <h3>SHOPPING DASHBOARD</h3>
-            <ul>
-                <li>Car</li>
-                <li>computers</li>
-                <li>shirts</li>
-                <li>Phones</li>
-            </ul>
+            
         </div>
 
     )

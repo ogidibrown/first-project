@@ -12,13 +12,15 @@ const AppProvider = ({children})=> {
 
     const Brandname = "BROWNHOT"
     function updateValues(e){
-        console.log(e.target.value);
         setValues({...values,[e.target.name] : e.target.value})
 
-    }
 
+    }
+    const Messages =(text)=>{
+        alert(text)
+    }
     return(
-        <AppContext.Provider value={{updateValues,values, Brandname}}>
+        <AppContext.Provider value={{updateValues,values, Brandname,Messages}}>
             {children}
         </AppContext.Provider>
 

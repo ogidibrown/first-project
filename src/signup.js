@@ -1,28 +1,47 @@
 
 import Inputfield from './inputfield';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import {ConfirmButton} from './Button.style';
 import {useAppContext} from './store/context';
 import './signup.css';
-import Images from '../src/images/log1.jpg';
+import Images from '../src/images/bra2.png';
+import {useHistory} from 'react-router-dom';
 
 const Signup = () => {
 
-    const {updateValues} = useAppContext({})
-    const History = useHistory();
-
-    const gotoLogin= (e) =>{
-        History.push('/login')
+    const {values, updateValues, Messages} = useAppContext()
+    const history = useHistory()
+    console.log(values);
+    const submit = (e) =>{
         e.preventDefault();
+        if(values.password !== values.confirmpassword) return Messages('passwords do not match')
+
+
+        let json_object = JSON.stringify(values)
+      
+        
+        
+        fetch('http://localhost:5000/api/v1/signup', {
+            method: 'POST',
+            body: json_object,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            history.push('./login')
+        })
     }
+
    
 
     return(
 
         <div className="signindiv">
            
-            {/* <div className="picdiv">
-                </div> */}
+            {/* {message && <h1>{message}</h1> } */}
             <div className="sformdiv">
                 
                 <div className="stextdiv">
@@ -40,13 +59,13 @@ const Signup = () => {
                 
                 <div className="sinputdiv">
                  <Inputfield className="input1" type="email" name="email" onChange={updateValues} placeholder="E-Mail" />
-                 <Inputfield className="input2" type="password" password="password" onChange={updateValues} placeholder="PASSWORD"/>
-                 <Inputfield className="input3" type="password" password="password" onChange={updateValues} placeholder="Confim Password"/>
+                 <Inputfield className="input2" type="password" name="password" onChange={updateValues} placeholder="PASSWORD"/>
+                 <Inputfield className="input3" type="password" name="confirmpassword"  onChange={updateValues} placeholder="Confirm Password"/>
 
             </div>
 
            <div className="sbtndiv">
-                 <ConfirmButton onClick={gotoLogin}>Confim</ConfirmButton>
+                 <ConfirmButton onClick={submit}>Confirm</ConfirmButton>
 
            </div>
 
